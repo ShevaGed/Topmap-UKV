@@ -7,12 +7,26 @@
     (set! (.-innerText display) @counter)))
 
 (defn handle-click []
-  (swap! counter inc)
+  (swap! counter + 5)
+  (render!))
+
+(defn handle-reset []
+  (reset! counter 0)
+  (render!))
+
+(defn handle-substraction []
+  (when (> @counter 0) (swap! counter - 1))
   (render!))
 
 (defn init []
-  (let [btn (js/document.getElementById "counter-btn")]
-    (.addEventListener btn "click" handle-click))
+  (let [plus-btn  (js/document.getElementById "counter-btn")
+        reset-btn (js/document.getElementById "reset-btn")
+        subs-btn  (js/document.getElementById "substraction-btn")]
+    
+    (.addEventListener plus-btn  "click" handle-click)
+    (.addEventListener reset-btn "click" handle-reset)
+    (.addEventListener subs-btn  "click" handle-substraction))
+  
   (render!)
   (js/console.log "Project Started!"))
 

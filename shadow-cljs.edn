@@ -4,8 +4,7 @@
   "src/main"
   "src/test"]
 
- :dependencies
- [[reagent "1.2.0"]]
+ :dependencies[]
 
  :dev-http {8080 "public"}
  
