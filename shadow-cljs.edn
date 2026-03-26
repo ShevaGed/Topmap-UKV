@@ -12,5 +12,5 @@
  {:app {:target :browser
         :output-dir "public/js"
         :asset-patch "/js"
-        :modules {:main {:init-fn topmap-ukv.core/init}}
-        :devtools {after-load topmap-ukv.core/reload!}}}}
+        :modules {:main {:init-fn study-cljs.core/init}}
+        :devtools {after-load study-cljs.core/reload!}}}}
